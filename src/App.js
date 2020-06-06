@@ -4,7 +4,7 @@ import Bar from './components/Chart/barChart';
 import Pie from "./components/Chart/pieChart";
 import Line from './components/Chart/lineChart';
 import Paris_map from './components/Map/paris_map';
-
+import Points_map from "./components/Map/points_map";
 class App extends Component {
   constructor() {
     super();
@@ -25,6 +25,9 @@ class App extends Component {
               <Line data={this.props.chartData} />
             </div>
             <Paris_map />
+          </div>
+          <div>
+         <Points_map/>
           </div>
         </div>
       );
