@@ -5,6 +5,8 @@ import Pie from "./components/Chart/pieChart";
 import Line from './components/Chart/lineChart';
 import Paris_map from './components/Map/paris_map';
 import Points_map from "./components/Map/points_map";
+import Heat_map from './components/Map/heat_map';
+
 class App extends Component {
   constructor() {
     super();
@@ -27,9 +29,12 @@ class App extends Component {
             <Paris_map />
           </div>
           <div>
-         <Points_map/>
+            <Points_map />
           </div>
-        </div>
+          <div>
+            <Heat_map />
+          </div>
+          </div>
       );
     }
  
