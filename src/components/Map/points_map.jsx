@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "ol/ol.css";
 import { Map, View } from "ol";
-import { fromLonLat, getPointResolution } from "ol/proj.js";
+import { fromLonLat } from "ol/proj.js";
 import { Tile as TileLayer, Vector as VectorLayer } from "ol/layer";
 import {
   Vector as VectorSource,
@@ -9,16 +9,12 @@ import {
   XYZ as XYZSource,
   TileWMS as TileWMSSource,
 } from "ol/source";
-//marker
-import Point from "ol/geom/Point";
-import { Icon, Style } from "ol/style";
 
+import Point from "ol/geom/Point";
 import Feature from "ol/Feature";
 import base from "../../data/fetes.json";
+//marker
 import "../../data/marker.png";
-import { getCenter } from "ol/extent";
-
-import image from "../../data/marker.png";
 
 export default class points_map extends Component {
   constructor(props) {
@@ -43,12 +39,14 @@ export default class points_map extends Component {
     });
 
     //Creation et ajout du cercle sur paris
-    let gpsarrays = base.map((data) => ({ 'lat': data.geometry.coordinates[0], 'lon': data.geometry.coordinates[1] }));
+    let gpsarrays = base.map((data) => ({
+      lat: data.geometry.coordinates[0],
+      lon: data.geometry.coordinates[1],
+    }));
 
-
-gpsarrays.map((data)=>{
-        const marker = new Feature({
-          geometry: new Point(fromLonLat([data.lat, data.lon])),
+    gpsarrays.map((data) => {
+      const marker = new Feature({
+        geometry: new Point(fromLonLat([data.lat, data.lon])),
       });
 
       const vectorSource = new VectorSource({
@@ -59,27 +57,27 @@ gpsarrays.map((data)=>{
         source: vectorSource,
       });
       map.addLayer(markerVectorLayer);
-})
-
-
-
-
-  
+    });
   }
   render() {
+    const style_map = {
+      height: "400px",
+    };
+
     let villes = base.map(
       (data) => data.fields.adresse_administrative_ville_du_tiers_beneficiaire
     );
 
     console.log(villes);
 
-  
-
     return (
-      <div style={{ height: "600px" }}>
-        <h1>Points Map</h1>
-        <div id="map"></div>
-      </div>
+      <container>
+        <div>
+          <div>
+            <div id="map" style={style_map}></div>
+          </div>
+        </div>
+      </container>
     );
   }
 }

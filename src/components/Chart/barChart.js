@@ -73,25 +73,25 @@ class barChart extends Component {
 }
 
     render() {
-        return (
-          <div className="chart">
-            <Bar
-              data={this.state.barChart}
-              options={{
-                title: {
-                  display: this.props.displayTitle,
-                  text: "Distribution des supports financier par département",
-                  fontSize: 15,
-                },
-                legend: {
-                  display: this.props.displayLegend,
-                  position: "right",
-                },
-              }}
-            />
-            
-          </div>
-        );
+      return (
+        <div className="chart">
+          <h2>Avec utilisation de l'api ChartJs</h2>
+          <Bar
+            data={this.state.barChart}
+            options={{
+              title: {
+                display: this.props.displayTitle,
+                text: "Distribution des supports financier par département",
+                fontSize: 15,
+              },
+              legend: {
+                display: this.props.displayLegend,
+                position: "right",
+              },
+            }}
+          />
+        </div>
+      );
 }
 
 

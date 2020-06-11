@@ -19,7 +19,21 @@ class App extends Component {
         <div className="App">
           <div>
             <div>
-              <h1 Style={"color:black"}>ChartJs</h1>
+              <h1 Style={"color:black"}>
+                Projet sur les thèmes des graphiques et de la géolocalisation
+              </h1>
+              <h2 style={{ color: "cyan" }}>
+                Aide aux festivals de musiques actuelles et amplifiees 2011-2013
+              </h2>
+              <div>
+                <span style={{ fontWeight: "bold" }}>Source :</span>
+                <a
+                  href="https://www.data.gouv.fr/fr/datasets/aide-aux-festivals-de-musiques-actuelles-et-amplifiees-2011-2013-idf/"
+                  target="_blank"
+                >
+                  Suivre le lien
+                </a>
+              </div>
             </div>
             <div>
               <Bar data={this.props.chartData} />
@@ -34,7 +48,7 @@ class App extends Component {
           <div>
             <Heat_map />
           </div>
-          </div>
+        </div>
       );
     }
  

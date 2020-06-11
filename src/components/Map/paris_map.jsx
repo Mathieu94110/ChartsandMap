@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "ol/ol.css";
-import { Map, View, layer, Layers } from "ol";
-import { fromLonLat, getPointResolution } from "ol/proj.js";
+import { Map, View } from "ol";
+import { fromLonLat } from "ol/proj.js";
 import { Tile as TileLayer, Vector as VectorLayer } from "ol/layer";
 import {
   Vector as VectorSource,
@@ -12,21 +12,9 @@ import {
 //marker
 import Point from "ol/geom/Point";
 import { Icon, Style } from "ol/style";
-//
-import {
-  ScaleLine,
-  ZoomSlider,
-  MousePosition,
-  OverviewMap,
-  defaults as DefaultControls,
-} from "ol/control";
 import Feature from "ol/Feature";
 import base from "../../data/fetes.json";
 import image from "../../data/marker.png";
-//import Marker from "../../data/marker.png";
-
-// End Openlayers imports
-// End Openlayers imports
 // GIS coordinates for absolute center of Parislg 2.3522,lat 48.8566
 
 class Paris_map extends Component {
@@ -80,21 +68,9 @@ class Paris_map extends Component {
   }
 
   render() {
-    const style = {
-      width: "80%",
-      margin: "auto",
+    const style_map = {
       height: "400px",
-      backgroundColor: "#cccccc",
-      marginBottom: "100px",
     };
-
-    // travail sur affichage des villes avec budgets
-    //on stoque toutes les villes dans villes
-
-
-    //let coordonnées = base.map((data) =>
-    //)
-    // on devrait utiliser cela pour la liste de departements au lieu de le coder en dur pour qu'il reste adaptable
 
     var depts = new Array(100);
     for (var i = 0; i < 100; i++) {
@@ -116,10 +92,10 @@ class Paris_map extends Component {
 
     return (
       <container>
-        <h1>Openlayers</h1>
-        <div item xs={12}>
+        <h2>Avec utilisation de l'Api OpenLayers</h2>
+        <div>
           <div>
-            <div id="map" style={style}></div>
+            <div id="map" style={style_map}></div>
           </div>
         </div>
       </container>

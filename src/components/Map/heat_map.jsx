@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "ol/ol.css";
 import { Map, View } from "ol";
-import { fromLonLat, getPointResolution } from "ol/proj.js";
 import { Tile as TileLayer, Vector as VectorLayer } from "ol/layer";
 import {
   Vector as VectorSource,
@@ -10,21 +9,12 @@ import {
   TileWMS as TileWMSSource,
 } from "ol/source";
 //marker
-import Point from "ol/geom/Point";
-import { Icon, Style } from "ol/style";
-
-import Feature from "ol/Feature";
-import base from "../../data/fetes.json";
 import "../../data/marker.png";
-//rajout 
-import HeatData from "./data.geojson"
+
 import KML from "ol/format/KML";
 import { Heatmap as HeatmapLayer } from "ol/layer";
 import Stamen from "ol/source/Stamen";
-import file from "./data.kml"
-import { getCenter } from "ol/extent";
-
-import image from "../../data/marker.png";
+import file from "./data.kml";
 
 export default class heat_map extends Component {
   constructor(props) {
@@ -69,8 +59,7 @@ export default class heat_map extends Component {
   }
   render() {
     return (
-      <div style={{ height: "600px" }}>
-        <h1>Points Map</h1>
+      <div>
         <div id="map"></div>
       </div>
     );
