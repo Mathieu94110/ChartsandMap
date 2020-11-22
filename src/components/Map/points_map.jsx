@@ -5,9 +5,7 @@ import { fromLonLat } from "ol/proj.js";
 import { Tile as TileLayer, Vector as VectorLayer } from "ol/layer";
 import {
   Vector as VectorSource,
-  OSM as OSMSource,
-  XYZ as XYZSource,
-  TileWMS as TileWMSSource,
+XYZ as XYZSource,
 } from "ol/source";
 
 import Point from "ol/geom/Point";
@@ -17,9 +15,7 @@ import base from "../../data/fetes.json";
 import "../../data/marker.png";
 
 export default class points_map extends Component {
-  constructor(props) {
-    super(props);
-  }
+ 
   componentDidMount() {
     // carte + vue centrée sur l'ile-de-france
     const map = new Map({
@@ -62,6 +58,7 @@ export default class points_map extends Component {
   render() {
     const style_map = {
       height: "400px",
+   
     };
 
     let villes = base.map(
@@ -71,13 +68,13 @@ export default class points_map extends Component {
     console.log(villes);
 
     return (
-      <container>
+
         <div>
           <div>
             <div id="map" style={style_map}></div>
           </div>
         </div>
-      </container>
+
     );
   }
 }

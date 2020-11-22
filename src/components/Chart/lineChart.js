@@ -5,7 +5,6 @@ import base from "../../data/fetes.json";
 class lineChart extends Component {
   constructor(props) {
     super(props);
-    
 
     let departements = [77, 78, 91, 92, 93, 94, 95, 75];
     let listemontant = [];
@@ -16,7 +15,7 @@ class lineChart extends Component {
       let data = base.filter(
         (data) =>
           data.fields
-            .adresse_administrative_code_departement_du_tiers_beneficiaire ==
+            .adresse_administrative_code_departement_du_tiers_beneficiaire ===
           departement
       );
       // avec la fonction reduce
@@ -28,7 +27,7 @@ class lineChart extends Component {
     }
     for (let annee of listeannees) {
       let data = base.filter(
-        (data) => data.fields.exercice_de_la_premiere_decision == annee
+        (data) => data.fields.exercice_de_la_premiere_decision === annee
       );
       let sommeMontant = data.reduce(
         (precedent, actuel) => precedent + actuel.fields.montant_vote,
@@ -69,31 +68,31 @@ class lineChart extends Component {
     };
   }
   static defaultProps = {
-        displayTitle: true,
-        displayLegend: true,
-        legendPosition: "right",
-      };
+    displayTitle: true,
+    displayLegend: true,
+    legendPosition: "right",
+  };
 
-      render() {
-        return (
-          <div className="chart">
-            <Line
-              data={this.state.LineChart}
-              options={{
-                title: {
-                  display: this.props.displayTitle,
-                  text: "Distribution des supports financier par année",
-                  fontSize: 15,
-                },
-                legend: {
-                  display: this.props.displayLegend,
-                  position: "right",
-                },
-              }}
-            />
-          </div>
-        );
-      }
-    }
-  
+  render() {
+    return (
+      <div className="chart">
+        <Line
+          data={this.state.LineChart}
+          options={{
+            title: {
+              display: this.props.displayTitle,
+              text: "Distribution des supports financier par année",
+              fontSize: 15,
+            },
+            legend: {
+              display: this.props.displayLegend,
+              position: "right",
+            },
+          }}
+        />
+      </div>
+    );
+  }
+}
+
 export default lineChart;

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "ol/ol.css";
 import { Map, View } from "ol";
-import { Tile as TileLayer, Vector as VectorLayer } from "ol/layer";
+import { Tile as TileLayer } from "ol/layer";
 import {
   Vector as VectorSource,
-  OSM as OSMSource,
-  XYZ as XYZSource,
-  TileWMS as TileWMSSource,
+
+
+
 } from "ol/source";
 //marker
 import "../../data/marker.png";
@@ -17,9 +17,7 @@ import Stamen from "ol/source/Stamen";
 import file from "./data.kml";
 
 export default class heat_map extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
   componentDidMount() {
     // carte + vue centrée sur l'ile-de-france
 
@@ -27,7 +25,7 @@ export default class heat_map extends Component {
       source: new VectorSource({
         url: file,
         format: new KML({
-          extractStyles: false,
+          extractstyles: false,
         }),
       }),
       blur: parseInt(10, 10),
@@ -53,7 +51,7 @@ export default class heat_map extends Component {
       target: "map",
       view: new View({
         center: [0, 0],
-        zoom: 2,
+        zoom: 1,
       }),
     });
   }

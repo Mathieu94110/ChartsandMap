@@ -5,9 +5,7 @@ import { fromLonLat } from "ol/proj.js";
 import { Tile as TileLayer, Vector as VectorLayer } from "ol/layer";
 import {
   Vector as VectorSource,
-  OSM as OSMSource,
-  XYZ as XYZSource,
-  TileWMS as TileWMSSource,
+XYZ as XYZSource,
 } from "ol/source";
 //marker
 import Point from "ol/geom/Point";
@@ -18,9 +16,7 @@ import image from "../../data/marker.png";
 // GIS coordinates for absolute center of Parislg 2.3522,lat 48.8566
 
 class Paris_map extends Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   componentDidMount() {
     // Créer une instance de carte
@@ -77,28 +73,28 @@ class Paris_map extends Component {
       depts[i] = i + 1; //This populates the array.  +1 is necessary because arrays are 0 index based and you want to store 1-100 in it, NOT 0-99.
     }
 
-    for (var i = 0; i < depts.length; i++) {
+    for (i = 0; i < depts.length; i++) {
       console.log(depts[i]); //This prints the values that you stored in the array
     }
 
     let data = base.filter(
       (data) =>
         data.fields
-          .adresse_administrative_code_departement_du_tiers_beneficiaire ==
+          .adresse_administrative_code_departement_du_tiers_beneficiaire ===
         depts
     );
 
     console.log(data);
 
     return (
-      <container>
+<div>
         <h2>Avec utilisation de l'Api OpenLayers</h2>
         <div>
           <div>
             <div id="map" style={style_map}></div>
           </div>
         </div>
-      </container>
+</div>
     );
   }
 }

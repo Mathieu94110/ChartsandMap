@@ -14,7 +14,7 @@ class pieChart extends Component {
       let data = base.filter(
         (data) =>
           data.fields
-            .adresse_administrative_code_departement_du_tiers_beneficiaire ==
+            .adresse_administrative_code_departement_du_tiers_beneficiaire ===
           departement
       );
 
@@ -30,7 +30,7 @@ class pieChart extends Component {
 
     for (let annee of listeannees) {
       let data = base.filter(
-        (data) => data.fields.exercice_de_la_premiere_decision == annee
+        (data) => data.fields.exercice_de_la_premiere_decision === annee
       );
       let sommeMontant = data.reduce(
         (precedent, actuel) => precedent + actuel.fields.montant_vote,
@@ -41,7 +41,6 @@ class pieChart extends Component {
 
     this.state = {
       pieChart: {
-       
         labels: departements,
         datasets: [
           {
