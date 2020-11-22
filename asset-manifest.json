@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ChartsandMap/static/css/main.b60190c2.chunk.css",
+    "main.js": "/ChartsandMap/static/js/main.e9fae420.chunk.js",
+    "main.js.map": "/ChartsandMap/static/js/main.e9fae420.chunk.js.map",
+    "runtime-main.js": "/ChartsandMap/static/js/runtime-main.293d138c.js",
+    "runtime-main.js.map": "/ChartsandMap/static/js/runtime-main.293d138c.js.map",
+    "static/css/2.db529fa1.chunk.css": "/ChartsandMap/static/css/2.db529fa1.chunk.css",
+    "static/js/2.8b3c9540.chunk.js": "/ChartsandMap/static/js/2.8b3c9540.chunk.js",
+    "static/js/2.8b3c9540.chunk.js.map": "/ChartsandMap/static/js/2.8b3c9540.chunk.js.map",
+    "index.html": "/ChartsandMap/index.html",
+    "precache-manifest.c82caa2a15878cbed42386184964be9c.js": "/ChartsandMap/precache-manifest.c82caa2a15878cbed42386184964be9c.js",
+    "service-worker.js": "/ChartsandMap/service-worker.js",
+    "static/css/2.db529fa1.chunk.css.map": "/ChartsandMap/static/css/2.db529fa1.chunk.css.map",
+    "static/css/main.b60190c2.chunk.css.map": "/ChartsandMap/static/css/main.b60190c2.chunk.css.map",
+    "static/js/2.8b3c9540.chunk.js.LICENSE.txt": "/ChartsandMap/static/js/2.8b3c9540.chunk.js.LICENSE.txt",
+    "static/media/marker.png": "/ChartsandMap/static/media/marker.391cc436.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.293d138c.js",
+    "static/css/2.db529fa1.chunk.css",
+    "static/js/2.8b3c9540.chunk.js",
+    "static/css/main.b60190c2.chunk.css",
+    "static/js/main.e9fae420.chunk.js"
+  ]
+}
